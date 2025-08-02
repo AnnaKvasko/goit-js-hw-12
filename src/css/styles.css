@@ -7,12 +7,235 @@
 /* Common styles */
 @import url('./reset.css');
 @import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+/* .loader {
+  display: none;
+  width: 48px;
+  height: 48px;
+  border: 5px solid #ccc;
+  border-top: 5px solid #4e75ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+  
+} */
+
+/* .loader.visible {
+  display: block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+
+.form {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 36px;
+  margin-bottom: 32px;
+}
+
+.input,
+.btn {
+  height: 40px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+
+.input {
+  width: 272px;
+  border-radius: 4px;
+  background: #fff;
+  color: #808080;
+  font-weight: 400;
+  border: 1px solid #ccc;
+  padding: 0 12px;
+}
+
+.input:hover {
+  border: 1px solid #000;
+  outline: none;
+}
+
+.input:focus {
+  border: 1px solid #4e75ff;
+  outline: none;
+  color: #2e2f42;
+}
+
+.btn {
+  width: 91px;
+  border: none;
+  border-radius: 8px;
+  background: #4e75ff;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #6c8cff;
+}
+
+.input.has-text {
+  color: #2e2f42; 
+}
+
+
+.gallery {
+display: flex;
+flex-wrap: wrap;
+gap: 24px;
+justify-content: center;
+padding: 24px;
+margin: 0 auto;
+list-style: none;
+width: 1200px;
+background: #fff;
+}
+
+
+.gallery-item {
+  box-sizing: border-box;
+  /* width: calc((100% - 48px) / 3); */
+  width: 360px;
+  background-color: #fff;
+  border: 1px solid #808080;
+  /* border-radius: 8px; */
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease-in-out;
+  /* height: 200px; */
+}
+
+
+.gallery-item:hover {
+  transform: scale(1.02);
+}
+
+.gallery-link img {
+  width: 100%;
+  height: 200px;
+  display: block;
+  object-fit: cover;
+}
+
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* відстань між колонками */
+  /* padding: 12px 0; */
+  background-color: #f8f8f8;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.info p b {
+  display: block;
+}
+
+.info p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.info p b {
+  
+  font-size: 12px;
+  line-height: 2;
+  color: #2e2f42;
+  margin-bottom: 2px;
+}
+
+.info b {
+font-family: "Montserrat", sans-serif;
+font-weight: 600;
+font-size: 12px;
+line-height: 2;
+letter-spacing: 0.04em;
+color: #2e2f42;
+}
+
+.loader {
+  position: relative;
+  width: 64px;
+  height: 60px;
+}
+.loader::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+  width: 64px;
+  height: 32px;
+  border-radius: 0 0 50px 50px;
+  animation: move 0.5s linear infinite alternate;
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  background: #FF3D00;
+  width: 24px;
+  height: 24px;
+  transform: translateX(-50%) rotate(0deg);
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  100% { transform: translateX(-50%) rotate(360deg)}
+}
+@keyframes move {
+  0% { transform: rotate(10deg)}
+  100% { transform: rotate(-10deg)}
+}
+  
+.load-more-btn {
+  border-radius: 8px;
+padding: 8px 16px;
+width: 125px;
+height: 40px;
+background: #4e75ff;
+margin-top: 32px;
+text-align: center;
+border: none;
+font-family: "Montserrat", sans-serif;
+font-weight: 500;
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.04em;
+color: #fff;
+margin: auto;
+white-space: nowrap;
+margin-bottom: 44px;
+}
+
+.load-more-btn:hover {
+  background: #6c8cff;
+}
+.load-more-btn.hidden {
+  display: none;
+}
+
+.loader.visible {
+  display: inline-block;
+}
