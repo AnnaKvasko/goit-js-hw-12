@@ -1,14 +1,14 @@
 import { getImagesByQuery, PER_PAGE } from './js/pixabay-api.js';
 import {
-    createGallery,
-    clearGallery,
-    showLoader,
-    hideLoader,
-    showLoadMore,
-    hideLoadMore,
-    disableLoadMore,
-    enableLoadMore,
-  } from './js/render-functions.js';
+  createGallery,
+  clearGallery,
+  showLoader,
+  hideLoader,
+  showLoadMore,
+  hideLoadMore,
+  disableLoadMore,
+  enableLoadMore,
+} from './js/render-functions.js';
 
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
@@ -35,6 +35,7 @@ form.addEventListener('submit', async event => {
   currentPage = 1;
   clearGallery();
   hideLoadMore();
+  disableLoadMore(); 
   showLoader();
 
   try {
@@ -45,7 +46,6 @@ form.addEventListener('submit', async event => {
         message: 'Sorry, there are no images matching your search query. Please try again!',
         position: 'topRight',
       });
-      
       return;
     }
 
@@ -61,6 +61,7 @@ form.addEventListener('submit', async event => {
       hideLoadMore();
     } else {
       showLoadMore();
+      enableLoadMore();
     }
 
   } catch (error) {
@@ -95,6 +96,7 @@ loadMoreBtn.addEventListener('click', async () => {
       enableLoadMore();
     }
 
+    
     const { height: cardHeight } = document
       .querySelector('.gallery-item')
       .getBoundingClientRect();
